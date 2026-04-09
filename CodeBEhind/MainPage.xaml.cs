@@ -1,4 +1,6 @@
-﻿namespace CodeBEhind
+﻿using System.Runtime.InteropServices;
+
+namespace CodeBEhind
 {
     public partial class MainPage : ContentPage
     {
@@ -7,8 +9,21 @@
         public MainPage()
         {
             InitializeComponent();
+            stackLayout.Add(CreateButton());
         }
 
+        private Button CreateButton()
+        {
+            Button myButton = new Button()
+            {
+                Text="כפתור מקוד",
+                HeightRequest = 80,
+                Margin = new Thickness(15),
+                WidthRequest = 150
+            };
+            return myButton;
+
+        }
 		private void Button_Clicked(object sender, EventArgs e)
 		{
             Button btn = (Button)sender;
